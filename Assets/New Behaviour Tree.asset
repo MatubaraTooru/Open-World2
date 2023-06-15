@@ -21,10 +21,13 @@ MonoBehaviour:
   - rid: 8263472332413337607
   - rid: 8263472332413337627
   - rid: 8263472332413337628
+  - rid: 8263472359034847232
+  - rid: 8263472359034847233
+  - rid: 8263472359034847235
   treeState: 0
   blackboard:
     moveToPosition: {x: -0.2703691, y: 0.0356142, z: 0.18105832}
-  viewPosition: {x: 492, y: 371, z: 0}
+  viewPosition: {x: 500, y: 409, z: 0}
   viewScale: {x: 0.65751624, y: 0.65751624, z: 1}
   references:
     version: 2
@@ -72,6 +75,7 @@ MonoBehaviour:
         - rid: 8263472332413337607
         - rid: 8263472332413337627
         - rid: 8263472332413337628
+        - rid: 8263472359034847232
     - rid: 8263472332413337607
       type: {class: Wait, ns: BehaviorTreeNodeGraphEditor, asm: Assembly-CSharp}
       data:
@@ -113,3 +117,41 @@ MonoBehaviour:
         updateRotation: 1
         acceleration: 40
         tolerance: 1
+    - rid: 8263472359034847232
+      type: {class: Failure, ns: BehaviorTreeNodeGraphEditor, asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 591ddecf71d0b5e4dab3eac8270bf30e
+        position: {x: -151.00006, y: -14.000024}
+        blackboard:
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        child:
+          rid: 8263472359034847235
+    - rid: 8263472359034847233
+      type: {class: DetectionRange, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 2a36245e13a85234493d397e6ea47918
+        position: {x: -76, y: 128.99995}
+        blackboard:
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 1
+        targetObject: {fileID: 0}
+        detectionRange: 5
+    - rid: 8263472359034847235
+      type: {class: Wait, ns: BehaviorTreeNodeGraphEditor, asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 8c3b37f5cd1cb194b879f4a11fce36ee
+        position: {x: -261.00003, y: 128.99995}
+        blackboard:
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        duration: 1

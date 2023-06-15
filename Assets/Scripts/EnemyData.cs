@@ -9,6 +9,7 @@ public class EnemyData : ScriptableObject
 
     public float hp;
     public float strength;
+    public int dropMoney;
 
     public string ID { get => id; }
     public string Name { get => charName; }

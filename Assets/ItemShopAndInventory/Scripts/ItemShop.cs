@@ -30,7 +30,6 @@ public class ItemShop : MonoBehaviour
 
             var button = obj.GetComponent<Button>();
             button.onClick.AddListener(() => BuyItem(itemName));
-            button.onClick.AddListener(() => _uIManager.ChangeWallet());
 
             var text = obj.GetComponentInChildren<Text>();
             text.text = item.Name;
@@ -49,6 +48,7 @@ public class ItemShop : MonoBehaviour
         if (itemParam != null && _playerInventory.Wallet >= itemParam.Price)
         {
             _playerInventory.Wallet -= itemParam.Price;
+            _uIManager.ChangeWallet();
             _playerInventory.GetItem(itemParam);
         }
     }

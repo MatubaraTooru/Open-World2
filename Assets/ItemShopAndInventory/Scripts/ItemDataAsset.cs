@@ -46,15 +46,19 @@ public class ItemData
         {
             case ActionEffect.Recovery:
                 // 回復効果の処理
-                s.HP += _effectValue;
+                s.CullentHP += _effectValue;
+                if (s.CullentHP >= s.MaxHP) s.CullentHP = s.MaxHP;
+                Debug.Log("回復効果が発動しました");
                 break;
             case ActionEffect.PowerUp:
                 // 攻撃力上昇効果の処理
                 s.Strength += _effectValue;
+                Debug.Log("攻撃力上昇効果が発動しました");
                 break;
             case ActionEffect.DefenseUp:
                 // 防御力上昇効果の処理
                 s.Defense += _effectValue;
+                Debug.Log("防御力上昇効果が発動しました");
                 break;
             default:
                 Debug.LogWarning("未知のアイテム効果です");
