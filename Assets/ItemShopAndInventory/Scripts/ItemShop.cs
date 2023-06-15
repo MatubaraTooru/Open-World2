@@ -6,10 +6,12 @@ public class ItemShop : MonoBehaviour
     [SerializeField] ItemDataAsset _itemData;
     [SerializeField] GameObject _buttonPrefab;
     private Inventory _playerInventory;
+    private UIManager _uIManager;
 
     private void Awake()
     {
         _playerInventory = FindObjectOfType<Inventory>();
+        _uIManager = FindAnyObjectByType<UIManager>();
     }
 
     void Start()
@@ -28,6 +30,7 @@ public class ItemShop : MonoBehaviour
 
             var button = obj.GetComponent<Button>();
             button.onClick.AddListener(() => BuyItem(itemName));
+            button.onClick.AddListener(() => _uIManager.ChangeWallet());
 
             var text = obj.GetComponentInChildren<Text>();
             text.text = item.Name;

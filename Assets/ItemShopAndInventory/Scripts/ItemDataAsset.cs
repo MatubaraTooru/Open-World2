@@ -21,6 +21,8 @@ public class ItemData
 
     [SerializeField, Header("アイテムの効果")]
     private ActionEffect _effect = ActionEffect.Recovery;
+    [SerializeField, Header("アイテムの効果量")]
+    private float _effectValue = 20;
 
     [SerializeField, Header("アイテムの値段")]
     private int _price = 0;
@@ -37,23 +39,26 @@ public class ItemData
         DefenseUp, // 防御力上昇
     }
 
-    public void ApplyEffect()
+    public void ApplyEffect(GameObject target)
     {
-        Debug.Log(GetEffectMessage(_effect));
-    }
-
-    private string GetEffectMessage(ActionEffect effect)
-    {
-        switch (effect)
+        var s = target.GetComponent<PlayerController>();
+        switch (Effect)
         {
             case ActionEffect.Recovery:
-                return "体力が回復した";
+                // 回復効果の処理
+                s.HP += _effectValue;
+                break;
             case ActionEffect.PowerUp:
-                return "攻撃力が上がった";
+                // 攻撃力上昇効果の処理
+                s.Strength += _effectValue;
+                break;
             case ActionEffect.DefenseUp:
-                return "防御力が上がった";
+                // 防御力上昇効果の処理
+                s.Defense += _effectValue;
+                break;
             default:
-                return "";
+                Debug.LogWarning("未知のアイテム効果です");
+                break;
         }
     }
 }
