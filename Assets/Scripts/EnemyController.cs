@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private EnemyData _enemyData;
-    [SerializeField] private GameObject _ragdoll;
     private float _hp;
     private float _strength;
     private float _defense;
