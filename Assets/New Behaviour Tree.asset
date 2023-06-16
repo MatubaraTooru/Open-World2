@@ -13,97 +13,88 @@ MonoBehaviour:
   m_Name: New Behaviour Tree
   m_EditorClassIdentifier: 
   rootNode:
-    rid: 8263472332413337600
+    rid: 8263472360401928192
   nodes:
-  - rid: 8263472332413337600
-  - rid: 8263472332413337605
-  - rid: 8263472332413337606
-  - rid: 8263472332413337607
-  - rid: 8263472332413337627
-  - rid: 8263472332413337628
+  - rid: 8263472360401928192
+  - rid: 8263472360401928193
+  - rid: 8263472360401928194
+  - rid: 8263472360401928195
+  - rid: 8263472360401928196
+  - rid: 8263472360401928197
+  - rid: 8263472360401928198
+  - rid: 8263472360401928199
+  - rid: 8263472360401928200
+  - rid: 8263472360401928201
+  - rid: 8263472360401928203
   treeState: 0
   blackboard:
-    moveToPosition: {x: -0.2703691, y: 0.0356142, z: 0.18105832}
-  viewPosition: {x: 492, y: 371, z: 0}
-  viewScale: {x: 0.65751624, y: 0.65751624, z: 1}
+    moveToPosition: {x: 0, y: 0, z: 0}
+  viewPosition: {x: 177, y: 169, z: 0}
+  viewScale: {x: 0.57175326, y: 0.57175326, z: 1}
   references:
     version: 2
     RefIds:
-    - rid: 8263472332413337600
+    - rid: 8263472360401928192
       type: {class: RootNode, ns: BehaviorTreeNodeGraphEditor, asm: Assembly-CSharp}
       data:
         state: 0
         started: 0
-        guid: f0fd3b4e-47d1-4bc1-8fda-894edcc67b77
-        position: {x: -389.99994, y: -503.9999}
+        guid: a4e5e705-ec96-4ec7-84e5-881796930d8b
+        position: {x: -0.000005364418, y: -106.5139}
         blackboard:
           moveToPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
         child:
-          rid: 8263472332413337605
-    - rid: 8263472332413337605
-      type: {class: Repeat, ns: BehaviorTreeNodeGraphEditor, asm: Assembly-CSharp}
+          rid: 8263472360401928203
+    - rid: 8263472360401928193
+      type: {class: Selector, ns: BehaviorTreeNodeGraphEditor, asm: Assembly-CSharp}
       data:
         state: 0
         started: 0
-        guid: 1e6efd9be97c81f44bf1ff3e4b9594a7
-        position: {x: -390.00006, y: -332.31012}
-        blackboard:
-          moveToPosition: {x: 0, y: 0, z: 0}
-        description: 
-        drawGizmos: 0
-        child:
-          rid: 8263472332413337606
-        restartOnSuccess: 1
-        restartOnFailure: 0
-    - rid: 8263472332413337606
-      type: {class: Sequencer, ns: BehaviorTreeNodeGraphEditor, asm: Assembly-CSharp}
-      data:
-        state: 0
-        started: 0
-        guid: a94ee21e41d6af348a2905b47a748940
-        position: {x: -389.99994, y: -146.35379}
+        guid: 60a2418c6afa8904da43953f6ec20742
+        position: {x: -0.000022888184, y: 168.27084}
         blackboard:
           moveToPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
         children:
-        - rid: 8263472332413337607
-        - rid: 8263472332413337627
-        - rid: 8263472332413337628
-    - rid: 8263472332413337607
-      type: {class: Wait, ns: BehaviorTreeNodeGraphEditor, asm: Assembly-CSharp}
+        - rid: 8263472360401928197
+        - rid: 8263472360401928198
+    - rid: 8263472360401928194
+      type: {class: Sequencer, ns: BehaviorTreeNodeGraphEditor, asm: Assembly-CSharp}
       data:
         state: 0
         started: 0
-        guid: ebd5cb85a79f2f245a98ec39c8fd8723
-        position: {x: -703.5746, y: -14.000081}
+        guid: 04ba6c5cdec75dc4fb2b9d2f4225a53f
+        position: {x: -202.48598, y: 365.2907}
         blackboard:
           moveToPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
-        duration: 1
-    - rid: 8263472332413337627
-      type: {class: RandomPosition, ns: , asm: Assembly-CSharp}
+        children:
+        - rid: 8263472360401928195
+        - rid: 8263472360401928196
+    - rid: 8263472360401928195
+      type: {class: DetectionRange, ns: , asm: Assembly-CSharp}
       data:
         state: 0
         started: 0
-        guid: de3be20cee02b3049ae1a2684415033f
-        position: {x: -511.00003, y: -14.000081}
+        guid: 33772cdf04a4f4f4e82d22be50772e83
+        position: {x: -351.99994, y: 545.5019}
         blackboard:
           moveToPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
-        min: {x: -10, y: -10}
-        max: {x: 10, y: 10}
-    - rid: 8263472332413337628
+        targetObject: {fileID: 0}
+        detectionRange: 5
+    - rid: 8263472360401928196
       type: {class: MoveToPosition, ns: , asm: Assembly-CSharp}
       data:
         state: 0
         started: 0
-        guid: d32157f2f4a1dbd408d6b0f0b9f346f0
-        position: {x: -335.67242, y: -14.000076}
+        guid: 8f5bb3f189c7c994f948cd888a2e3e68
+        position: {x: -149.99998, y: 545.99994}
         blackboard:
           moveToPosition: {x: 0, y: 0, z: 0}
         description: 
@@ -113,3 +104,87 @@ MonoBehaviour:
         updateRotation: 1
         acceleration: 40
         tolerance: 1
+    - rid: 8263472360401928197
+      type: {class: Failure, ns: BehaviorTreeNodeGraphEditor, asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 134ba885eb480064fb5378cf31a2b1fc
+        position: {x: -201.99994, y: 255.99998}
+        blackboard:
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        child:
+          rid: 8263472360401928194
+    - rid: 8263472360401928198
+      type: {class: Sequencer, ns: BehaviorTreeNodeGraphEditor, asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: a51c86771eaf2b34488f75a0f80cdd13
+        position: {x: 96.01987, y: 344}
+        blackboard:
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        children:
+        - rid: 8263472360401928199
+        - rid: 8263472360401928200
+        - rid: 8263472360401928201
+    - rid: 8263472360401928199
+      type: {class: Wait, ns: BehaviorTreeNodeGraphEditor, asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: e8a9a58d763a71e49bd95c0468de0370
+        position: {x: 58.01592, y: 545.99994}
+        blackboard:
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        duration: 1
+    - rid: 8263472360401928200
+      type: {class: RandomPosition, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 7970188e42722614cb5659561ac8ac36
+        position: {x: 245.99997, y: 545.99994}
+        blackboard:
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        min: {x: -10, y: -10}
+        max: {x: 10, y: 10}
+    - rid: 8263472360401928201
+      type: {class: MoveToPosition, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 9680cfecaa49c39479f0cf5bae5b79c8
+        position: {x: 434.6123, y: 546}
+        blackboard:
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        speed: 5
+        stoppingDistance: 0.1
+        updateRotation: 1
+        acceleration: 40
+        tolerance: 1
+    - rid: 8263472360401928203
+      type: {class: Repeat, ns: BehaviorTreeNodeGraphEditor, asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: ede4ee1faa70f1a42b6dc100c3119c70
+        position: {x: 0, y: 24.749014}
+        blackboard:
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        child:
+          rid: 8263472360401928193
+        restartOnSuccess: 1
+        restartOnFailure: 0

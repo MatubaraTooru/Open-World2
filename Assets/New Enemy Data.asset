@@ -16,3 +16,4 @@ MonoBehaviour:
   charName: Skeleton
   hp: 20
   strength: 3
+  dropMoney: 20

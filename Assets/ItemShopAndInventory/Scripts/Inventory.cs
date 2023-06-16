@@ -16,6 +16,11 @@ public class Inventory : MonoBehaviour
     private GameObject _buttonPrefab;
 
     private Dictionary<ItemData, int> _itemStacks = new Dictionary<ItemData, int>();
+    private UIManager _uiManager;
+    private void Awake()
+    {
+        _uiManager = FindAnyObjectByType<UIManager>();
+    }
 
     private void Start()
     {
@@ -78,6 +83,7 @@ public class Inventory : MonoBehaviour
     private void UseItem(ItemData item)
     {
         item.ApplyEffect(FindAnyObjectByType<PlayerController>().gameObject);
+        _uiManager.ChangeStatus(item);
 
         _itemStacks[item]--;
         if (_itemStacks[item] <= 0)

@@ -13,11 +13,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _moveSpeed = 5.0f;
     [SerializeField] private string _merchantTag;
     [SerializeField] private float _sprintSpeed = 2.0f;
-    [SerializeField] private float _hp = 100;
+    [SerializeField] private float _maxHP = 100;
     [SerializeField] private float _strength = 5;
     [SerializeField] private float _defense;
+    [SerializeField] Transform _reStartPoint;
 
-    public float HP { get => _hp; set => _hp = value; }
+    public float MaxHP { get => _maxHP; set => _maxHP = value; }
+    public float CullentHP { get => _cullentHP; set => _cullentHP = value; }
     public float Strength { get => _strength; set => _strength = value; }
     public float Defense { get => _defense; set => _defense = value; }
 
@@ -27,12 +29,16 @@ public class PlayerController : MonoBehaviour
     private bool _isSprint = false;
     private bool _shopPanelisActive = false;
     private UIManager _uIManager;
+    private float _cullentHP;
+    private BoxCollider _boxCollider;
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
         _uIManager = FindAnyObjectByType<UIManager>();
+        _cullentHP = _maxHP;
+        _boxCollider = GetComponent<BoxCollider>();
     }
 
     private void Update()
@@ -61,6 +67,16 @@ public class PlayerController : MonoBehaviour
         {
             _uIManager.InventoryPanelActivate();
         }
+        if (Input.GetButtonDown("Fire1"))
+        {
+            _animator.Play("Attack");
+        }
+        if (_cullentHP <= 0) Death();
+    }
+
+    private void Death()
+    {
+        this.transform.position = _reStartPoint.position;
     }
 
     private void FixedUpdate()
@@ -94,11 +110,21 @@ public class PlayerController : MonoBehaviour
         else _animator.SetFloat("Run", 0);
         _animator.SetBool("Sprint", _isSprint);
     }
+    private void Attack()
+    {
+        _boxCollider.enabled = !_boxCollider.enabled;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag(_merchantTag))
         {
             _shopping = true;
+        }
+        else if (other.gameObject.CompareTag("Enemy"))
+        {
+            other.gameObject.GetComponent<EnemyController>().HP -= _strength;
+
+            Debug.Log("“G‚É“–‚½‚Á‚½");
         }
     }
     private void OnTriggerExit(Collider other)
